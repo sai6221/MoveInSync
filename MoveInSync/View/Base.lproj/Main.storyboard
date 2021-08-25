@@ -27,16 +27,23 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="0.30489415048763452" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="isS-un-fiA">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="7Rp-P7-Zbj">
+                            <color key="tintColor" red="0.61661515060000005" green="0.93798075120000002" blue="0.71179902610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="refreshPressed:" destination="BYZ-38-t0r" id="2lJ-sN-yDX"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="XGf-Ik-Rin">
                             <color key="tintColor" red="0.61661515060000005" green="0.93798075120000002" blue="0.71179902610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="IJj-pE-EGQ" kind="presentation" id="3cd-rV-pkZ"/>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="qJY-pz-JJ9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="rEX-EN-05R" id="uVF-ui-XDa"/>
                         <segue destination="k6n-WL-b0T" kind="show" identifier="DetailsSegue" id="T7M-Vm-SUp"/>
+                        <segue destination="IJj-pE-EGQ" kind="presentation" identifier="barSegue" id="jbE-et-duq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,25 +83,31 @@
                                         <rect key="frame" x="0.0" y="392" width="414" height="382"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="XCW-m3-Nhf">
-                                                <rect key="frame" x="100" y="117.66666666666661" width="214" height="146.66666666666663"/>
+                                                <rect key="frame" x="67" y="117.66666666666661" width="280" height="146.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-3G-o8m" userLabel="Name">
-                                                        <rect key="frame" x="54" y="0.0" width="106" height="46.666666666666664"/>
+                                                        <rect key="frame" x="87" y="0.0" width="106" height="46.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="UvB-P4-JVp">
-                                                        <rect key="frame" x="0.0" y="116.66666666666674" width="214" height="30"/>
+                                                        <rect key="frame" x="0.0" y="116.66666666666674" width="280" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV2-FH-3AP" userLabel="Salary">
-                                                                <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VV2-FH-3AP" userLabel="Salary">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="aIN-3d-uVQ"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21I-0x-K37" userLabel="Age">
-                                                                <rect key="frame" x="147" y="0.0" width="67" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="21I-0x-K37" userLabel="Age">
+                                                                <rect key="frame" x="180" y="0.0" width="100" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="tUs-V0-H00"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -214,7 +227,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -235,7 +248,7 @@
                                                 </constraints>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>

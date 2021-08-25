@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50B0ADC72E11FAF298A3DDF4 /* Pods_MoveInSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A55A04BEAA42E680E43A82 /* Pods_MoveInSync.framework */; };
 		C1340B6826D625D200F42D3D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1340B6726D625D200F42D3D /* AddViewController.swift */; };
 		C1340B6A26D6323000F42D3D /* EmployeeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1340B6926D6323000F42D3D /* EmployeeManager.swift */; };
 		C1340B6C26D638BB00F42D3D /* EmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1340B6B26D638BB00F42D3D /* EmployeeData.swift */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50A55A04BEAA42E680E43A82 /* Pods_MoveInSync.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoveInSync.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BEA989DA1C1DD6874CD5AC2 /* Pods-MoveInSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveInSync.release.xcconfig"; path = "Target Support Files/Pods-MoveInSync/Pods-MoveInSync.release.xcconfig"; sourceTree = "<group>"; };
 		C1340B6726D625D200F42D3D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C1340B6926D6323000F42D3D /* EmployeeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManager.swift; sourceTree = "<group>"; };
 		C1340B6B26D638BB00F42D3D /* EmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeData.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		C17A71F126D5571800E6117A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C17A71F326D5571800E6117A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C184016026D61A15002E16F5 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		DDC131986AFF1D1546D05385 /* Pods-MoveInSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoveInSync.debug.xcconfig"; path = "Target Support Files/Pods-MoveInSync/Pods-MoveInSync.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B0ADC72E11FAF298A3DDF4 /* Pods_MoveInSync.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65304C9C0D988C8958DAE026 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDC131986AFF1D1546D05385 /* Pods-MoveInSync.debug.xcconfig */,
+				5BEA989DA1C1DD6874CD5AC2 /* Pods-MoveInSync.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		824FB819F789159247687907 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50A55A04BEAA42E680E43A82 /* Pods_MoveInSync.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C17A71D926D5571400E6117A = {
 			isa = PBXGroup;
 			children = (
 				C17A71E426D5571500E6117A /* MoveInSync */,
 				C17A71E326D5571500E6117A /* Products */,
+				65304C9C0D988C8958DAE026 /* Pods */,
+				824FB819F789159247687907 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C17A71F626D5571800E6117A /* Build configuration list for PBXNativeTarget "MoveInSync" */;
 			buildPhases = (
+				A1DAEDAC674BB37375FBDC83 /* [CP] Check Pods Manifest.lock */,
 				C17A71DE26D5571400E6117A /* Sources */,
 				C17A71DF26D5571400E6117A /* Frameworks */,
 				C17A71E026D5571400E6117A /* Resources */,
+				B5FCD4B583BD915BE9FA73A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A1DAEDAC674BB37375FBDC83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoveInSync-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5FCD4B583BD915BE9FA73A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoveInSync/Pods-MoveInSync-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoveInSync/Pods-MoveInSync-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoveInSync/Pods-MoveInSync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C17A71DE26D5571400E6117A /* Sources */ = {
@@ -335,6 +404,7 @@
 		};
 		C17A71F726D5571800E6117A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDC131986AFF1D1546D05385 /* Pods-MoveInSync.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -353,6 +423,7 @@
 		};
 		C17A71F826D5571800E6117A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BEA989DA1C1DD6874CD5AC2 /* Pods-MoveInSync.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

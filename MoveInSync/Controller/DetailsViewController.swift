@@ -23,21 +23,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         Name.text = employeeName
-        Salary.text = "$\(employeeSalary)"
-        Age.text = "\(employeeAge) years"
+        Salary.text = "Salary: $\(employeeSalary!)"
+        Age.text = "Age: \(employeeAge!) years"
         
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -13,25 +13,41 @@ class AddViewController: UIViewController {
     @IBOutlet weak var salaryTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     
+    var ne = ViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameTextField.delegate = self
+        salaryTextField.delegate = self
+        ageTextField.delegate = self
+        let tapG = UITapGestureRecognizer(target: self, action: #selector(AddViewController.handleTap))
+        view.addGestureRecognizer(tapG)
         // Do any additional setup after loading the view.
+    }
+    @objc func handleTap(){
+        print("Handle Tap")
+        view.endEditing(true)
     }
     
     
     @IBAction func submitPressed(_ sender: UIButton) {
+//        print("Name is \(nameTextField.text!) and salary is \(salaryTextField.text!) and age is \(ageTextField.text!)")
+        if let name = nameTextField.text, let sal = Int(salaryTextField.text ?? "0" ), let age = Int(ageTextField.text ?? "0"){
+            let new = Employee(id: ViewController.employees.count, employee_name: name, employee_salary: sal, employee_age: age)
+            ViewController.employees.append(new)
+        }
+        print(ViewController.employees)
+        view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension AddViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
 }

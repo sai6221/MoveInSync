@@ -11,9 +11,12 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var employeeBubble: UIView!
     @IBOutlet weak var employeeName: UILabel!
+    @IBOutlet weak var detailDescription: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        random()
         // Initialization code
     }
 

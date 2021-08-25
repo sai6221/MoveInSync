@@ -13,3 +13,9 @@ struct Employee: Codable{
     let employee_salary: Int
     let employee_age: Int
 }
+
+struct POST: Codable{
+    let name: String
+    let salary: Int
+    let age: Int
+}
